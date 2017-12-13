@@ -12,4 +12,6 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView("showProduct");
 		return mav;
 	}
+	
+	
 }
