@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*" isELIgnored="false"%>
  
-<form action="addProduct">
- 
+<!-- <form action="addProduct" method="post"> -->
+ <form action="addProduct" method="get" >
     产品名称 ：<input type="text" name="name" value=""><br />
     产品价格： <input type="text" name="price" value=""><br />
  
