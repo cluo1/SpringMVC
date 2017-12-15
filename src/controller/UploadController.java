@@ -24,7 +24,6 @@ public class UploadController {
         
         File newFile = new File(request.getServletContext().getRealPath("/image"), newFileName);
         
-        System.out.println(request.getServletContext().getRealPath("/image"));
         newFile.getParentFile().mkdirs();
         file.getImage().transferTo(newFile);
  
