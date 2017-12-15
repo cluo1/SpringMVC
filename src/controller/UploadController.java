@@ -4,12 +4,13 @@ import java.io.File;
 import java.io.IOException;
  
 import javax.servlet.http.HttpServletRequest;
- 
+
 import org.apache.commons.lang.xwork.RandomStringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
  
+
 import pojo.UploadedImageFile;
  
 @Controller
@@ -20,7 +21,10 @@ public class UploadController {
             throws IllegalStateException, IOException {
         String name = RandomStringUtils.randomAlphanumeric(10);
         String newFileName = name + ".jpg";
-        File newFile = new File(request.getContextPath()+"/image", newFileName);
+        
+        File newFile = new File(request.getServletContext().getRealPath("/image"), newFileName);
+        
+        System.out.println(request.getServletContext().getRealPath("/image"));
         newFile.getParentFile().mkdirs();
         file.getImage().transferTo(newFile);
  
